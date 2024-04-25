@@ -25,5 +25,6 @@
 # it can open basic images, like .png's or .jpeg's, 
 # although it'd be nice if it could open .webp's, too)
 # and it will open it in that program.
-
+#
+# also, OW OWIES OUCH MY DICK SOMEONE CUT IT OFF
 
