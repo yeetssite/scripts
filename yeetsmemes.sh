@@ -80,14 +80,15 @@ IRed='\033[0;91m'	  # red
 TxtReset='\033[0m'
 
 # #################################
-
+clear
 echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v0.02${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
 echo "Please note that this is a ${BWhite}${UWhite}VERY${TxtReset}${UWhite} early build and literally ${UWhite}does nothing.${TxtReset}"
+echo "This downloader script comes from ${BWhite}Yeet's Scripts${TxtReset}: ${UBlue}https://github.com/yeetssite/scripts${TxtReset}"
 echo "${BWhite}----------${TxtReset}"
 echo "To check your internet connection, use ping: ${BPurple}ping google.com${TxtReset} (you can stop it by hitting ${BCyan}CTRL C${TxtReset}.)"
 echo "${BWhite}----------${TxtReset}"
 echo "To install cURL, use your system's package installer."
-echo "For example, on ubuntu, you'd run apt: ${BPurple}sudo apt install curl${TxtReset}"
+echo "For example, on ubuntu or debian, you'd run apt: ${BPurple}sudo apt install curl${TxtReset}"
 echo "${BWhite}----------${TxtReset}"
 echo "${BBlue}${OnWhite}==========Downloading memes==========${TxtReset}"
 echo "You have 4 options:"
@@ -95,4 +96,32 @@ echo " "
 echo "${Black}${OnWhite}[1]${TxtReset} Download and archive (.zip) memes"
 echo "${Black}${OnWhite}[2]${TxtReset} Download and place memes in current directory"
 echo "${Black}${OnWhite}[3]${TxtReset} Download and place memes in a new ${Black}${OnBlue}./memes${TxtReset} directory"
-echo "${Black}${OnWhite}[4]${TxtReset} Cancel Download (Has a 3 second delay)"
+echo "${Black}${OnWhite}[4]${TxtReset} Cancel Download"
+echo " "
+echo "To select something, type the number beside the option you wanna choose and press ${BCyan}ENTER${TxtReset}"
+read -p "Pick one: " downlopt
+echo " "
+
+# Make Things do stuff
+
+if [ $downlopt = 1 ]
+then
+	echo "You picked [1], but this script isnt even finished (lol), so nothing will be downloaded."
+fi
+
+if [ $downlopt = 2 ]
+then
+	echo "You picked 2, but my smol brain can only code so much at a time. Nothing will be downloaded."
+fi
+
+if [ $downlopt = 3 ]
+then
+	echo "You picked the third thing, but i havent coded anything for the third thing yet (lol). Nothing downloaded."
+fi
+
+if [ $downlopt = 4 ]
+then
+	echo "${BRed}Cancelled.${TxtReset}"
+	# Shows some text saying "Cancelled" and finishes this script
+fi
+
