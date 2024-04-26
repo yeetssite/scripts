@@ -81,9 +81,18 @@ TxtReset='\033[0m'
 
 # #################################
 
-echo "Welcome to ${BBlue} yeets memes. ${TxtReset} Make sure you're connected to the internet and that cURL is installed."
-echo " "
-echo "To check your internet connection, use ping: ${BPurple}${OnWhite}ping google.com${TxtReset}"
-echo " "
+echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v0.02${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
+echo "Please note that this is a ${BWhite}${UWhite}VERY${TxtReset}${UWhite} early build and literally ${UWhite}does nothing.${TxtReset}"
+echo "${BWhite}----------${TxtReset}"
+echo "To check your internet connection, use ping: ${BPurple}ping google.com${TxtReset} (you can stop it by hitting ${BCyan}CTRL C${TxtReset}.)"
+echo "${BWhite}----------${TxtReset}"
 echo "To install cURL, use your system's package installer."
-echo "For example, on ubuntu, you'd run apt: ${BPurple}${OnWhite}sudo apt install curl${TxtReset}"
+echo "For example, on ubuntu, you'd run apt: ${BPurple}sudo apt install curl${TxtReset}"
+echo "${BWhite}----------${TxtReset}"
+echo "${BBlue}${OnWhite}==========Downloading memes==========${TxtReset}"
+echo "You have 4 options:"
+echo " "
+echo "${Black}${OnWhite}[1]${TxtReset} Download and archive (.zip) memes"
+echo "${Black}${OnWhite}[2]${TxtReset} Download and place memes in current directory"
+echo "${Black}${OnWhite}[3]${TxtReset} Download and place memes in a new ${Black}${OnBlue}./memes${TxtReset} directory"
+echo "${Black}${OnWhite}[4]${TxtReset} Cancel Download (Has a 3 second delay)"
