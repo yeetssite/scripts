@@ -90,7 +90,7 @@ echo "${BWhite}----------${TxtReset}"
 echo "To install cURL, use your system's package installer."
 echo "For example, on ubuntu or debian, you'd run apt: ${BPurple}sudo apt install curl${TxtReset}"
 echo "${BWhite}----------${TxtReset}"
-echo "${BBlue}${OnWhite}==========Downloading memes==========${TxtReset}"
+echo "${BBlack}${OnWhite}==========Downloading memes==========${TxtReset}"
 echo "You have 4 options:"
 echo " "
 echo "${Black}${OnWhite}[1]${TxtReset} Download and archive (.zip) memes"
@@ -106,17 +106,17 @@ echo " "
 
 if [ $downlopt = 1 ]
 then
-	echo "You picked [1], but this script isnt even finished (lol), so nothing will be downloaded."
+	echo "${Yellow}You picked [1], but this script isnt even finished (lol), so nothing will be downloaded.${TxtReset}"
 fi
 
 if [ $downlopt = 2 ]
 then
-	echo "You picked 2, but my smol brain can only code so much at a time. Nothing will be downloaded."
+	echo "${Yellow}You picked 2, but my smol brain can only code so much at a time. Nothing will be downloaded.${TxtReset}"
 fi
 
 if [ $downlopt = 3 ]
 then
-	echo "You picked the third thing, but i havent coded anything for the third thing yet (lol). Nothing downloaded."
+	echo "${Yellow}You picked the third thing, but i havent coded anything for the third thing yet (lol). Nothing downloaded.${TxtReset}"
 fi
 
 if [ $downlopt = 4 ]
