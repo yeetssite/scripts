@@ -10,9 +10,9 @@
 # up at: 
 # <http://google.com/search?q=How+to+bash+script?>
 # 
-# =================
+# ==================
 # About this script
-# =================
+# ==================
 #
 # What does it do?
 # 
@@ -81,7 +81,7 @@ TxtReset='\033[0m'
 
 # #################################
 clear
-echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v0.02${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
+echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v0.05${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
 echo "Please note that this is a ${BWhite}${UWhite}VERY${TxtReset}${UWhite} early build and literally ${UWhite}does nothing.${TxtReset}"
 echo "This downloader script comes from ${BWhite}Yeet's Scripts${TxtReset}: ${UBlue}https://github.com/yeetssite/scripts${TxtReset}"
 echo "${BWhite}----------${TxtReset}"
@@ -90,12 +90,12 @@ echo "${BWhite}----------${TxtReset}"
 echo "To install cURL, use your system's package installer."
 echo "For example, on ubuntu or debian, you'd run apt: ${BPurple}sudo apt install curl${TxtReset}"
 echo "${BWhite}----------${TxtReset}"
-echo "${BBlack}${OnWhite}==========Downloading memes==========${TxtReset}"
+echo "${BBlack}${OnWhite}=========Downloading memes=========${TxtReset}"
 echo "You have 4 options:"
 echo " "
 echo "${Black}${OnWhite}[1]${TxtReset} Download and archive (.zip) memes"
 echo "${Black}${OnWhite}[2]${TxtReset} Download and place memes in current directory"
-echo "${Black}${OnWhite}[3]${TxtReset} Download and place memes in a new ${Black}${OnBlue}./memes${TxtReset} directory"
+echo "${Black}${OnWhite}[3]${TxtReset} Download and place memes in a new ${Black}${OnBlue}./yeets-memes${TxtReset} directory"
 echo "${Black}${OnWhite}[4]${TxtReset} Cancel Download"
 echo " "
 echo "To select something, type the number beside the option you wanna choose and press ${BCyan}ENTER${TxtReset}"
@@ -106,7 +106,18 @@ echo " "
 
 if [ $downlopt = 1 ]
 then
-	echo "${Yellow}You picked [1], but this script isnt even finished (lol), so nothing will be downloaded.${TxtReset}"
+	echo "${BGreen}Downloading Memes to Current Folder...${TxtReset}"
+	sleep 3s
+	echo "Getting ${Black}${OnBlue}IMG_001.png${TxtReset} from ${UBlue}https://yeetssite.github.io/IMG/${TxtReset}"
+	curl -O "https://yeetssite.github.io/memes/IMG/IMG_001.png"
+	echo "${Green}Done!${TxtReset}"
+	echo "Getting ${Black}${OnBlue}IMG_001.png${TxtReset} from ${UBlue}https://yeetssite.github.io/IMG/${TxtReset}"
+        curl -O "https://yeetssite.github.io/memes/IMG/IMG_002.png"
+	echo "${Green}Done!${TxtReset}"
+	echo " "
+	echo "${BGreen}Download finished!${TxtReset}"
+	echo "${Yellow}Note: Make sure to check if curl throws out an error; This script cannot tell you in this early stage.${TxtReset}"
+
 fi
 
 if [ $downlopt = 2 ]
