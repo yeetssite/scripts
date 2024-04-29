@@ -81,7 +81,7 @@ TxtReset='\033[0m'
 
 # #################################
 clear
-echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v1.0${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
+echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v1.1${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
 echo "Please note that this is a ${BWhite}${UWhite}VERY${TxtReset}${UWhite} early build and literally ${UWhite}does nothing.${TxtReset}"
 echo "This downloader script comes from ${BWhite}Yeet's Scripts${TxtReset}: ${UBlue}https://github.com/yeetssite/scripts${TxtReset}"
 echo "${BWhite}----------${TxtReset}"
@@ -116,25 +116,33 @@ then
 	then
 		frcode1=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_001.png")
 		frcode2=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_002.png")
+		frcode3=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_003.png")
+		dsuccess="${frcode1},${frcode2},${frcode3}"
 
-		dsuccess="${frcode1},${frcode2}"
-
-		echo "${Blue}Success! Response code: ${TxtReset}${Green}${response_code}${TxtReset}"	        
-		if [ ${frcode1} = 200 ]; then
+		echo "${Blue}Success! Response code: ${TxtReset}${Green}${response_code}${TxtReset}"
+		sleep 0.5s
 		echo "Downloading ${Black}${OnBlue}IMG_001.png${TxtReset}..."
+		if [ ${frcode1} = 200 ]; then
 		curl -s -O "https://yeetssite.github.io/IMG/IMG_001.png"
 		echo "${Green}Done! Response code ${frcode1}.${TxtReset}"
 		else
-		echo "${Red}Could not download ${Black}${OnBlue}IMG_001.png${TxtReset}${Red}: Status code ${frcode1}${TxtReset}"
+		echo "${Red}Could not download ${Black}${OnBlue}IMG_001.png${TxtReset}${Red}: Status code ${frcode1}.${TxtReset}"
 		fi
-		if [ $frcode2 = 200 ]; then
 		echo "Downloading ${Black}${OnBlue}IMG_002.png${TxtReset}..."
+		if [ $frcode2 = 200 ]; then
 		curl -s -O "https://yeetssite.github.io/memes/IMG/IMG_002.png"
 		echo "${Green}Done! Response code ${frcode2}.${TxtReset}"
 	        else
-		echo "${Red}Could not download ${Black}${OnBlue}IMG_002.png${TxtReset}${Red}: Status code ${frcode1}${TxtReset}"
+		echo "${Red}Could not download ${Black}${OnBlue}IMG_002.png${TxtReset}${Red}: Status code ${frcode2}.${TxtReset}"
 		fi
-		if [ ${dsuccess}  = "200,200" ]; then
+		echo "Downloading ${Black}${OnBlue}IMG_003.png${TxtReset}..."
+		if [ ${frcode3} = 200 ]; then
+		curl -s -O "https://yeetssite.github.io/memes/IMG/IMG_003.png"
+		echo "${Green}Done! Response code ${frcode3}.${TxtReset}"
+		else
+		echo "${Red}Could not download ${Black}${OnBlue}IMG_003.png${TxtReset}${Red}: Status code ${frcode3}.${TxtReset}"
+		fi
+		if [ ${dsuccess}  = "200,200,200" ]; then
 		echo "${BGreen}Download finished!${TxtReset}"
 		echo "Use ${BPurple}ls${TxtReset} to list your folder contents and look for files like ${Black}${OnBlue}IMG_001.png${TxtReset}, ${Black}${OnBlue}GIF_001.gif${TxtReset}, or ${Black}${OnBlue}VIDEO_001.mp4${TxtReset}."
 		else
@@ -143,10 +151,24 @@ then
 		fi
 	
 	else
-		echo "${BRed}Uh Oh! Expected a response code of ${TxtReset}${BGreen}200,${TxtReset}${BRed} got one of${BYellow} ${response_code}${TxtReset}${Bed} instead.${TxtReset}"
+		echo "${BRed}Uh Oh! Expected a response code of ${TxtReset}${BGreen}200,${TxtReset}${BRed} got one of${BYellow} ${response_code}${TxtReset}${BRed} instead.${TxtReset}"
+	fi
+	if [ ${response_code} = 000 ]
+	then
+		echo "${White}${OnRed}000 - No Internet!${TxtReset}"
+		echo "${Yellow}- Connect to the Internet.${TxtReset}"
+		echo "${Yellow}- Start the script again.${TxtReset}"
+	fi
+	if [ ${response_code} = 404 ]
+	then
+		echo "${White}${OnRed}404 - Not Found!${TxtReset}"
+		echo "${Yellow}- Check your Internet Connection.${TxtReset}"
+		echo "${Yellow}- Check your Proxy and Firewall Settings.${TxtReset}"
+		echo "${Yellow}- The Site may have Moved to a New Address.${TxtReset}"
+		echo "${Yellow}- The Site might be Down Permanantly.${TxtReset}"
+		echo "${Yellow}- The Site might also be Down Temporarily.${TxtReset}"
 	fi
 fi
-
 if [ $downlopt = 2 ]
 then
 	echo "${Yellow}You picked 2, but my smol brain can only code so much at a time. Nothing will be downloaded.${TxtReset}"
