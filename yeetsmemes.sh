@@ -81,7 +81,7 @@ TxtReset='\033[0m'
 
 # #################################
 clear
-echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v0.05${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
+echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v11111111111.0${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
 echo "Please note that this is a ${BWhite}${UWhite}VERY${TxtReset}${UWhite} early build and literally ${UWhite}does nothing.${TxtReset}"
 echo "This downloader script comes from ${BWhite}Yeet's Scripts${TxtReset}: ${UBlue}https://github.com/yeetssite/scripts${TxtReset}"
 echo "${BWhite}----------${TxtReset}"
@@ -107,17 +107,44 @@ echo " "
 if [ $downlopt = 1 ]
 then
 	echo "${BGreen}Downloading Memes to Current Folder...${TxtReset}"
-	sleep 3s
-	echo "Getting ${Black}${OnBlue}IMG_001.png${TxtReset} from ${UBlue}https://yeetssite.github.io/IMG/${TxtReset}"
-	curl -O "https://yeetssite.github.io/memes/IMG/IMG_001.png"
-	echo "${Green}Done!${TxtReset}"
-	echo "Getting ${Black}${OnBlue}IMG_001.png${TxtReset} from ${UBlue}https://yeetssite.github.io/IMG/${TxtReset}"
-        curl -O "https://yeetssite.github.io/memes/IMG/IMG_002.png"
-	echo "${Green}Done!${TxtReset}"
-	echo " "
-	echo "${BGreen}Download finished!${TxtReset}"
-	echo "${Yellow}Note: Make sure to check if curl throws out an error; This script cannot tell you in this early stage.${TxtReset}"
+	sleep 1s
+	echo "Getting memes from ${UBlue}https://yeetssite.github.io/memes/IMG/${TxtReset}"
+	sleep 0.5s
+	echo "Checking Response code(s)..."	
+	response_code=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/")
+	if [ ${response_code} = 200 ]
+	then
+		frcode1=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_001.png")
+		frcode2=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_002.png")
 
+		dsuccess="${frcode1},${frcode2}"
+
+		echo "${Blue}Success! Response code: ${TxtReset}${Green}${response_code}${TxtReset}"	        
+		if [ ${frcode1} = 200 ]; then
+		echo "Downloading ${Black}${OnBlue}IMG_001.png${TxtReset}..."
+		curl -s -O "https://yeetssite.github.io/IMG/IMG_001.png"
+		echo "${Green}Done! Response code ${frcode1}.${TxtReset}"
+		else
+		echo "${Red}Could not download ${Black}${OnBlue}IMG_001.png${TxtReset}${Red}: Status code ${frcode1}${TxtReset}"
+		fi
+		if [ $frcode2 = 200 ]; then
+		echo "Downloading ${Black}${OnBlue}IMG_002.png${TxtReset}..."
+		curl -s -O "https://yeetssite.github.io/memes/IMG/IMG_002.png"
+		echo "${Green}Done! Response code ${frcode2}.${TxtReset}"
+	        else
+		echo "${Red}Could not download ${Black}${OnBlue}IMG_002.png${TxtReset}${Red}: Status code ${frcode1}${TxtReset}"
+		fi
+		if [ ${dsuccess}  = "200,200" ]; then
+		echo "${BGreen}Download finished!${TxtReset}"
+		echo "Use ${BPurple}ls${TxtReset} to list your folder contents and look for files like ${Black}${OnBlue}IMG_001.png${TxtReset}, ${Black}${OnBlue}GIF_001.gif${TxtReset}, or ${Black}${OnBlue}VIDEO_001.mp4${TxtReset}."
+		else
+		echo "${BGreen}Download finished,${TxtReset}${BYellow} but some files weren't downloaded.${TxtReset}"
+		echo "Use ${BPurple}ls${TxtReset} to list your folder contents and look for files like ${Black}${OnBlue}IMG_001.png${TxtReset}, ${Black}${OnBlue}GIF_001.gif${TxtReset}, or ${Black}${OnBlue}VIDEO_001.mp4${TxtReset}."
+		fi
+	
+	else
+		echo "${BRed}Uh Oh! Expected a response code of ${TxtReset}${BGreen}200,${TxtReset}${BRed} got one of${BYellow} ${response_code}${TxtReset}${Bed} instead.${TxtReset}"
+	fi
 fi
 
 if [ $downlopt = 2 ]
