@@ -81,7 +81,7 @@ TxtReset='\033[0m'
 
 # #################################
 clear
-echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v1.1${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
+echo "Welcome to ${BBlue}Yeet's Memes Downloader${TxtReset}${BGreen} v1.3${TxtReset}${BRed}-ALPHA${TxtReset}! Make sure you're connected to the internet and that cURL is installed."
 echo "Please note that this is a ${BWhite}${UWhite}VERY${TxtReset}${UWhite} early build and literally ${UWhite}does nothing.${TxtReset}"
 echo "This downloader script comes from ${BWhite}Yeet's Scripts${TxtReset}: ${UBlue}https://github.com/yeetssite/scripts${TxtReset}"
 echo "${BWhite}----------${TxtReset}"

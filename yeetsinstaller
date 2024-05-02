@@ -1,0 +1,9 @@
+#!/bin/sh
+
+clear
+echo "Welcome to yeet's scripts installer v1.1-beta! This installer will download scripts to /usr/bin so they can be executed by name (that way you don't have to write the path every time)."
+sleep 5s
+echo "Starting download..."
+echo "Downloading Yeet's Memes (executable as 'yeetsmemes')"
+curl -o https://yeetssite.github.io/scripts/yeetsmemes ~/../usr/bin/yeetsmemes
+echo "Download Finished!"
