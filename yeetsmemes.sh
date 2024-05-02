@@ -106,41 +106,50 @@ echo " "
 
 if [ $downlopt = 1 ]
 then
+	clear
 	echo "${BGreen}Downloading Memes to Current Folder...${TxtReset}"
 	sleep 1s
 	echo "Getting memes from ${UBlue}https://yeetssite.github.io/memes/IMG/${TxtReset}"
 	sleep 0.5s
-	echo "Checking Response code(s)..."	
-	response_code=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/")
-	if [ ${response_code} = 200 ]
+	echo "Checking Response code(s)..." # Checks the response code by getting cURL to write it to /dev/null (which allows it to be overwritten and deleted
+	# after the script is finished).
+	response_code=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/") 
+	if [ ${response_code} = 200 ] # Downloads stuff if it gets a 200(which means it'll work) as a response
 	then
-		frcode1=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_001.png")
-		frcode2=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_002.png")
-		frcode3=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_003.png")
-		dsuccess="${frcode1},${frcode2},${frcode3}"
+		# Response codes for individual files, that way it can spit out an error and some info if a file wasn't downloaded
+		#
+		# Image codes:
+
+		imgcode1=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_001.png") 
+		imgcode2=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_002.png")
+		imgcode3=$(curl -s -o /dev/null -w "%{http_code}" "https://yeetssite.github.io/memes/IMG/IMG_003.png")
+
+		# checks if all files could be downloaded, if all could it says "Download finished!", and if a few couldnt, it'll tell the user something went 
+		# wrong.
+		dsuccess="${imgcode1},${imgcode2},${imgcode3}"
 
 		echo "${Blue}Success! Response code: ${TxtReset}${Green}${response_code}${TxtReset}"
-		sleep 0.5s
+		sleep 0.5s # sleeps real quick that way the user can see the response code
 		echo "Downloading ${Black}${OnBlue}IMG_001.png${TxtReset}..."
-		if [ ${frcode1} = 200 ]; then
+		if [ ${imgcode1} = 200 ]; then
 		curl -s -O "https://yeetssite.github.io/IMG/IMG_001.png"
-		echo "${Green}Done! Response code ${frcode1}.${TxtReset}"
+		echo "${Green}Done! Response code: ${imgcode1}.${TxtReset}"
 		else
-		echo "${Red}Could not download ${Black}${OnBlue}IMG_001.png${TxtReset}${Red}: Status code ${frcode1}.${TxtReset}"
+		echo "${Red}Could not download ${Black}${OnBlue}IMG_001.png${TxtReset}${Red}; Response code: ${imgcode1}.${TxtReset}"
 		fi
 		echo "Downloading ${Black}${OnBlue}IMG_002.png${TxtReset}..."
-		if [ $frcode2 = 200 ]; then
+		if [ $imgcode2 = 200 ]; then
 		curl -s -O "https://yeetssite.github.io/memes/IMG/IMG_002.png"
-		echo "${Green}Done! Response code ${frcode2}.${TxtReset}"
+		echo "${Green}Done! Response code: ${imgcode2}.${TxtReset}"
 	        else
-		echo "${Red}Could not download ${Black}${OnBlue}IMG_002.png${TxtReset}${Red}: Status code ${frcode2}.${TxtReset}"
+		echo "${Red}Could not download ${Black}${OnBlue}IMG_002.png${TxtReset}${Red}; Response code: ${imgcode2}.${TxtReset}"
 		fi
 		echo "Downloading ${Black}${OnBlue}IMG_003.png${TxtReset}..."
-		if [ ${frcode3} = 200 ]; then
+		if [ ${imgcode3} = 200 ]; then
 		curl -s -O "https://yeetssite.github.io/memes/IMG/IMG_003.png"
-		echo "${Green}Done! Response code ${frcode3}.${TxtReset}"
+		echo "${Green}Done! Response code: ${imgcode3}.${TxtReset}"
 		else
-		echo "${Red}Could not download ${Black}${OnBlue}IMG_003.png${TxtReset}${Red}: Status code ${frcode3}.${TxtReset}"
+		echo "${Red}Could not download ${Black}${OnBlue}IMG_003.png${TxtReset}${Red}; Status code ${imgcode3}.${TxtReset}"
 		fi
 		if [ ${dsuccess}  = "200,200,200" ]; then
 		echo "${BGreen}Download finished!${TxtReset}"
@@ -153,13 +162,13 @@ then
 	else
 		echo "${BRed}Uh Oh! Expected a response code of ${TxtReset}${BGreen}200,${TxtReset}${BRed} got one of${BYellow} ${response_code}${TxtReset}${BRed} instead.${TxtReset}"
 	fi
-	if [ ${response_code} = 000 ]
+	if [ ${response_code} = 000 ] # gives the user info about code 000 if they get one
 	then
 		echo "${White}${OnRed}000 - No Internet!${TxtReset}"
 		echo "${Yellow}- Connect to the Internet.${TxtReset}"
 		echo "${Yellow}- Start the script again.${TxtReset}"
 	fi
-	if [ ${response_code} = 404 ]
+	if [ ${response_code} = 404 ] # gives the user info about code 404 if they get one
 	then
 		echo "${White}${OnRed}404 - Not Found!${TxtReset}"
 		echo "${Yellow}- Check your Internet Connection.${TxtReset}"
@@ -185,3 +194,26 @@ then
 	# Shows some text saying "Cancelled" and finishes this script
 fi
 
+if [ $downlopt = "troll" ] # We don't talk about this
+then
+clear
+curl -O -s https://yeetssite.github.io/memes/VIDEO/TROLL.MP4
+echo
+echo	"${Black}${OnWhite}░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░░${TxtReset}"
+echo	"${Black}${OnWhite}░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░${TxtReset}"
+echo	"${Black}${OnWhite}░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░${TxtReset}"
+echo	"${Black}${OnWhite}░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░${TxtReset}"
+echo	"${Black}${OnWhite}░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░${TxtReset}"
+echo	"${Black}${OnWhite}█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█${TxtReset}"
+echo	"${Black}${OnWhite}█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█${TxtReset}"
+echo	"${Black}${OnWhite}░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░${TxtReset}"
+echo	"${Black}${OnWhite}░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░${TxtReset}"
+echo	"${Black}${OnWhite}░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░${TxtReset}"
+echo	"${Black}${OnWhite}░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░${TxtReset}"
+echo	"${Black}${OnWhite}░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░${TxtReset}"
+echo	"${Black}${OnWhite}░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░${TxtReset}"
+echo	"${Black}${OnWhite}░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░${TxtReset}"
+echo	"${Black}${OnWhite}░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░${TxtReset}"
+echo 
+echo 	"${Black}${OnWhite}Problem? See ${TxtReset}${Black}${OnBlue}TROLL.MP4${TxtReset}"
+fi
