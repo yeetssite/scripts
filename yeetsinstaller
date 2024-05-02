@@ -5,5 +5,5 @@ echo "Welcome to yeet's scripts installer v1.1-beta! This installer will downloa
 sleep 5s
 echo "Starting download..."
 echo "Downloading Yeet's Memes (executable as 'yeetsmemes')"
-curl -o https://yeetssite.github.io/scripts/yeetsmemes ~/../usr/bin/yeetsmemes
+curl -o -s "https://yeetssite.github.io/scripts/yeetsmemes" ~/../usr/bin/yeetsmemes
 echo "Download Finished!"
