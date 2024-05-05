@@ -6,10 +6,11 @@ This repo is actually a github pages site at https://yeetssite.github.io/scripts
 
 It's meant to be used with bash, but can contain other script types, too.
 
-These are the current bash scripts availible:
-`yeetsmemes` v`1.3-alpha`  
-`qls` v`1.0-alpha`
-`yeetsinstaller` v`1.2-alpha`
+### These are the current bash scripts availible:  
+
+`yeetsmemes v1.4-alpha`   
+`qls v1.2-alpha`  
+`yeetsinstaller v1.3-alpha`  
 
 # Installing
 
@@ -22,8 +23,9 @@ To use the installer, enter or copypasta these commands:
 
     $ curl -O https://yeetssite.github.io/scripts/yeetsinstaller
     $ chmod u+r+x ./yeetsinstaller 
-    $ # Downloads the installer and marks it executable
-    $ ./yeetsinstaller # runs the installer
+    $ # ^^^Downloads the installer and marks it executable
+    $ ./yeetsinstaller 
+    $ # ^^^runs the installer
     
 
 The installer will download scripts to your `BIN/` directory so they can be executed as normal commands.

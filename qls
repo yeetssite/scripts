@@ -2,18 +2,26 @@
 LeHelp()
 {
 	echo "QLS: Quick List"
-	echo "Copyright (c) 2024 Jacob 'Yeetsup' Hache"
+	echo "Copyright (c) 2024 Jacob 'Yeetsup' Hache."
 	echo "Available Flags:"
-	echo "	-b	Lists your BIN/ directory"
-	echo "	-h	Lists your HOME/ directory"
-	echo "	-H	Displays this help and stops"
+	echo "	-b	Lists your BIN/ directory."
+	echo "	-h	Lists your HOME/ directory."
+	echo "	-H	Displays this help and stops."
+	echo "	-v	Displays the installed version."
+}
+LeVersion()
+{
+	echo -e "\x1b[1;34mQLS v1.2-alpha\x1b[0m"
+	echo "Copyright (c) 2024 Jacob 'Yeetsup' Hache."
+	echo -e "Use \x1b[35m'qls -H'\x1b[0m for help."
+	
 }
 if (( $# == 0 )); then
 LeHelp
 echo -e "\x1b[1;31m[1]: qls needs a flag to run\x1b[0m"
 exit 1
 fi
-while getopts bHh flag
+while getopts bHhv flag
 do
 case "${flag}" in
 b) 
@@ -26,6 +34,10 @@ ls $HOME
 ;;
 H)
 LeHelp
+exit
+;;
+v)
+LeVersion
 exit
 ;;
 esac
