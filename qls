@@ -25,11 +25,11 @@ while getopts bHhv flag
 do
 case "${flag}" in
 b) 
-echo "Files and Folders in BIN/(${PATH}):"
-ls $PATH
+echo "Files and Folders in bin(/usr/bin/):"
+ls /usr/bin/
 ;;
 h) 
-echo "Files and folders in home/(${HOME}):"
+echo "Files and folders in home(${HOME}):"
 ls $HOME
 ;;
 H)
