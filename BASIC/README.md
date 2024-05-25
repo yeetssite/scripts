@@ -2,7 +2,7 @@
 
 #### IMPORTANT:
 
-Please note that the BASIC interpeter used here is [TinyBASIC](https://github.com/cyningstan/tinybasic)(Homepage: [http://tinybasic.cyningstan.org.uk/](http://tinybasic.cyningstan.org.uk/), which has very specific syntax. To install it, follow [these instructions](https://github.com/cyningstan/tinybasic?tab=readme-ov-file#tiny-basic).
+Please note that the BASIC interpeter used here is [TinyBASIC](https://github.com/cyningstan/tinybasic)(Homepage: [http://tinybasic.cyningstan.org.uk/](http://tinybasic.cyningstan.org.uk/)\), which has very specific syntax. To install it, follow [these instructions](https://github.com/cyningstan/tinybasic?tab=readme-ov-file#tiny-basic).
 
 #### Running these files in TinyBASIC:
 
