@@ -1,7 +1,11 @@
-#!/bin/sh
-
+#!/bin/bash
+installedbygit="unknown"
+installedbycurl="unknown"
+gitdirectory="unknown"
+usingtermux="unknown"
 clear
-echo "Welcome to yeet's scripts installer v1.3-alpha! This installer will download scripts to /usr/bin/ so they can be executed by name (that way you don't have to write the path every time)."
+echo "Welcome to yeet's scripts installer v1.4-alpha! This installer will download scripts to /usr/bin/ so they can be executed by name (that way you don't have to write the path every time)."
+installviacurl() {
 sleep 2s
 echo "Starting download..."
 echo "Downloading Yeet's Memes v1.4-alpha(executable as 'yeetsmemes') to /usr/bin/..."
@@ -14,3 +18,41 @@ curl -s -o /usr/bin/qls "https://yeetssite.github.io/scripts/qls"
 chmod u+r+x /usr/bin/qls
 echo "Finished!"
 echo "Download Finished!"
+}
+
+echo "Before installation starts, we're gonna ask you some questions."
+echo "To answer the question, enter the letter assigned to the answer."
+echo "e.g., if you wanted to answer the next question with 'git', you'd enter 'g'."
+echo -n
+sleep 1.5s
+echo ""
+echo "Did you get this script via git, or via curl?"
+read -p "[c] - curl(default)/[g] - git:" answer1
+if [ -z ${answer1} ];then
+installedbycurl="true"
+installedbygit="false"
+echo "Selected '[c] - curl' due to no answer"
+sleep 0.5s
+fi
+if [ "${answer1}" = "c" ];then
+installedbycurl="true"
+installedbygit="false"
+echo "selected [c] - curl"
+echo -n
+sleep 0.5s
+fi
+if [ "${answer1}" = "g" ]; then
+echo "Selected [g] - git"
+echo -n
+sleep 0.5s
+fi
+echo " "
+echo "Are you using Termux(Linux for android)"
+read -p "[y] - yes/[n] - no(default):" answer2
+
+if [ -z ${answer2} ];then
+usingtermux="true"
+echo "Selected '[n] - no' due to no answer"
+sleep 0.5s
+fi
+

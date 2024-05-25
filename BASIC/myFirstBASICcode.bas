@@ -1,0 +1,11 @@
+10 PRINT "Old aah programming language presents: your mom"
+20 PRINT "Select an option:"
+30 PRINT ""
+40 PRINT "[1]: I wanna kill myself"
+50 PRINT "[2]: ew"
+70 PRINT "[3]: yea but I fucked yours"
+80 PRINT ""
+90 INPUT a
+100 IF a=1 THEN PRINT "ha kys bitch"
+110 IF a=2 THEN PRINT "fym 'ew'?"
+120 IF a=3 THEN PRINT "how dare you"
