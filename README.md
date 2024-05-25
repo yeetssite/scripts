@@ -21,7 +21,7 @@ It's meant to be used with bash, but can contain other script types, too.
 The installer is the recommended way to get my scripts because you don't have to specify the path to scripts you want to run if you use this method.  
 To use the installer, enter or copypasta these commands: 
 
-```sh
+```Shell
 $ curl -O https://yeetssite.github.io/scripts/yeetsinstaller
 $ chmod u+r+x ./yeetsinstaller 
 $ # ^^^Downloads the installer and marks it executable
@@ -33,20 +33,20 @@ The installer will download scripts to your `BIN/` directory so they can be exec
 
 You can also use `wget` to download the installer:
 
-```sh
+```Shell
 $ wget https://yeetssite.github.io/scripts/yeetsinstaller && chmod u+r+x ./yeetsinstaller
 $ ./yeetsinstaller
 ```
 
 #### Clone Via Git:
 
-```sh
+```Shell
 $ git clone https://github.com/yeetssite/scripts
 ```
 
 But using this method to install will require you to specify the path to your scripts every time you want to run them, e.g.:
 
-```sh
+```Shell
 someone@localhost:~$ ./scripts/yeetsmemes
 ```
 
