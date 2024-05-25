@@ -40,5 +40,8 @@ v)
 LeVersion
 exit
 ;;
+*)
+echo -e "\x1b[1;31m[2]: '$1' isn't an option\x1b[0m"
+exit 2
 esac
 done
