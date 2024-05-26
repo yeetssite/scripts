@@ -46,13 +46,13 @@ You can also use `wget` to download the installer:
 
 But using this method to install will require you to specify the path to your scripts every time you want to run them, e.g.:
 
-```bash
+```console
 ~$ ./scripts/yeetsmemes
 ```
 
 Using the installer will download scripts to your BIN and mark them executable, letting them be run like this:
 
-```bash
+```console
 ~$ yeetsmemes
 ```
 
