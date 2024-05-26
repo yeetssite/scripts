@@ -22,11 +22,11 @@ The installer is the recommended way to get my scripts because you don't have to
 To use the installer, enter or copypasta these commands: 
 
 ```console
-$ curl -O https://yeetssite.github.io/scripts/yeetsinstaller
-$ chmod u+r+x ./yeetsinstaller 
-$ # ^^^Downloads the installer and marks it executable
-$ ./yeetsinstaller 
-$ # ^^^runs the installer
+~$ curl -O https://yeetssite.github.io/scripts/yeetsinstaller
+~$ chmod u+r+x ./yeetsinstaller 
+~$ # ^^^Downloads the installer and marks it executable
+~$ ./yeetsinstaller 
+~$ # ^^^runs the installer
  ```   
 
 The installer will download scripts to your `BIN/` directory so they can be executed as normal commands.
@@ -34,14 +34,14 @@ The installer will download scripts to your `BIN/` directory so they can be exec
 You can also use `wget` to download the installer:
 
 ```console
-$ wget https://yeetssite.github.io/scripts/yeetsinstaller && chmod u+r+x ./yeetsinstaller
-$ ./yeetsinstaller
+~$ wget https://yeetssite.github.io/scripts/yeetsinstaller && chmod u+r+x ./yeetsinstaller
+~$ ./yeetsinstaller
 ```
 
 #### Clone Via Git:
 
 ```console
-$ git clone https://github.com/yeetssite/scripts
+~$ git clone https://github.com/yeetssite/scripts
 ```
 
 But using this method to install will require you to specify the path to your scripts every time you want to run them, e.g.:
