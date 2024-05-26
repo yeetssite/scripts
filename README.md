@@ -16,7 +16,7 @@ It's meant to be used with bash, but can contain other script types, too.
 
 ### You can install my scripts using these methods:
 
-#### The installer (The recommended way)
+#### The installer ~~(The recommended way)~~(broken)
 
 The installer is the recommended way to get my scripts because you don't have to specify the path to scripts you want to run if you use this method.  
 To use the installer, enter or copypasta these commands: 
