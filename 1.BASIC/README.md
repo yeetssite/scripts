@@ -16,5 +16,3 @@ Make sure to replace `[directory]/[file]` with the path to the script you wanna 
 ```console
 $ tinybasic ./myFirstBASICcode.bas
 ```
-
-
