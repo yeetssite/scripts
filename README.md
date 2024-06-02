@@ -2,7 +2,7 @@
 My bash and other assorted scripts
 
 # use  
-This repo is actually a github pages site at https://yeetssite.github.io/scripts/, but it has no content as it's specifically made to host files only.
+This repo is actually ~~a github pages site at [https://yeetssite.github.io/scripts/](https://yeetssite.github.io/scripts/)~~ dead, and has moved to [https://github.com/yeetssite/suite/](https://github.com/yeetssite/suite/),but it has no content as it's specifically made to host files only.
 
 It's meant to be used with bash, but can contain other script types, too.
 
